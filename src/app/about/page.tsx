@@ -94,19 +94,18 @@ export default function About() {
             horizontal="center"
           >
             <Avatar src={person.avatar} size="xl" />
-            <Row gap="8" vertical="center">
-              <Icon onBackground="accent-weak" name="globe" />
-              {person.location}
-            </Row>
-            {person.languages && person.languages.length > 0 && (
-              <Row wrap gap="8">
-                {person.languages.map((language, index) => (
-                  <Tag key={index} size="l">
-                    {language}
-                  </Tag>
-                ))}
-              </Row>
-            )}
+            <Heading 
+              className={styles.textAlign} 
+              variant="display-strong-xs">
+              {person.name}
+            </Heading>
+            <Heading 
+              className={styles.textAlign} 
+              variant="display-default-xs"
+              onBackground="neutral-weak">
+              {person.role}
+            </Heading>
+            
           </Column>
         )}
         <Column className={styles.blockAlign} flex={9} maxWidth={40}>
@@ -133,7 +132,7 @@ export default function About() {
                 }}
               >
                 <Icon paddingLeft="12" name="calendar" onBackground="brand-weak" />
-                <Row paddingX="8">Schedule a call</Row>
+                <Row paddingX="8">Agendar reunión</Row>
                 <IconButton
                   href={about.calendar.link}
                   data-border="rounded"
@@ -142,16 +141,7 @@ export default function About() {
                 />
               </Row>
             )}
-            <Heading className={styles.textAlign} variant="display-strong-xl">
-              {person.name}
-            </Heading>
-            <Text
-              className={styles.textAlign}
-              variant="display-default-xs"
-              onBackground="neutral-weak"
-            >
-              {person.role}
-            </Text>
+            
             {social.length > 0 && (
               <Row
                 className={styles.blockAlign}
@@ -301,9 +291,9 @@ export default function About() {
                       {skill.description}
                     </Text>
                     {skill.tags && skill.tags.length > 0 && (
-                      <Row wrap gap="8" paddingTop="8">
+                      <Row wrap gap="16" paddingTop="m">
                         {skill.tags.map((tag, tagIndex) => (
-                          <Tag key={`${skill.title}-${tagIndex}`} size="l" prefixIcon={tag.icon}>
+                          <Tag key={`${skill.title}-${tagIndex}`} size="l" prefixIcon={tag.icon} style={{ transform: "scale(1.2)", margin: "4px"}}>
                             {tag.name}
                           </Tag>
                         ))}

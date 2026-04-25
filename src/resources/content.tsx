@@ -2,14 +2,12 @@ import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/
 import { Line, Row, Text } from "@once-ui-system/core";
 
 const person: Person = {
-  firstName: "Selene",
-  lastName: "Yu",
-  name: `Selene Yu`,
-  role: "Design Engineer",
-  avatar: "/images/avatar.jpg",
-  email: "example@gmail.com",
-  location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
+  firstName: "Emanuel",
+  lastName: "Barboza",
+  name: `Emanuel Barboza`,
+  role: "Software Engineer",
+  avatar: "/images/perfil.png",
+  email: "emanuelbarboza5@gmail.com"
 };
 
 const newsletter: Newsletter = {
@@ -25,26 +23,20 @@ const social: Social = [
   {
     name: "GitHub",
     icon: "github",
-    link: "https://github.com/once-ui-system",
+    link: "https://github.com/emanuel-22",
     essential: true,
   },
   {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://www.linkedin.com/company/once-ui/",
+    link: "https://www.linkedin.com/in/emabarboza/",
     essential: true,
   },
   {
     name: "Instagram",
     icon: "instagram",
-    link: "https://www.instagram.com/once_ui/",
+    link: "https://www.instagram.com/argis_lab/",
     essential: false,
-  },
-  {
-    name: "Threads",
-    icon: "threads",
-    link: "https://www.threads.com/@once_ui",
-    essential: true,
   },
   {
     name: "Email",
@@ -83,9 +75,9 @@ const home: Home = {
 
 const about: About = {
   path: "/about",
-  label: "About",
-  title: `About – ${person.name}`,
-  description: `Meet ${person.name}, ${person.role} from ${person.location}`,
+  label: "Sobre mí",
+  title: `Sobre mí – ${person.name}`,
+  description: `Meet ${person.name}, ${person.role}`,
   tableOfContent: {
     display: true,
     subItems: false,
@@ -95,139 +87,243 @@ const about: About = {
   },
   calendar: {
     display: true,
-    link: "https://cal.com",
+    link: "https://calendar.app.google/EMFxNAtNLd6uLWD5A",
   },
   intro: {
     display: true,
-    title: "Introduction",
+    title: "Introducción",
     description: (
       <>
-        Selene is a Jakarta-based design engineer with a passion for transforming complex challenges
-        into simple, elegant design solutions. Her work spans digital interfaces, interactive
-        experiences, and the convergence of design and technology.
+        Soy Licenciado en Análisis de Sistemas y me encuentro finalizando una Maestría en Ingeniería de Software. 
+        A lo largo de mi trayectoria he participado en proyectos académicos y de la industria. 
+        Cuento con experiencia en diseño, desarrollo e implementación de sistemas. 
+        Estoy interesado en construir soluciones robustas, escalables y mantenibles, poniendo foco en la calidad del código y la mejora continua.
+
+        Además, tengo una fuerte base trabajo en equipo, colaboración activa y adaptación a entornos dinámicos. 
+        Disfruto aprender nuevas tecnologías, explorar herramientas y 
+        enfrentar desafíos técnicos que aporten valor real a los proyectos en los que participo.
       </>
     ),
   },
   work: {
     display: true, // set to false to hide this section
-    title: "Work Experience",
+    title: "Experiencia Laboral",
     experiences: [
       {
-        company: "FLY",
-        timeframe: "2022 - Present",
-        role: "Senior Design Engineer",
+        company: "Kozaca",
+        timeframe: "2025 - Actualidad",
+        role: "Ssr Software Developer",
         achievements: [
           <>
-            Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
-            engagement and 30% faster load times.
+            Desarrollo y mantenimiento de plataformas web Red-i  para gestión de clínicas y Convenia Salud para financiadores de salud.
           </>,
           <>
-            Spearheaded the integration of AI tools into design workflows, enabling designers to
-            iterate 50% faster.
+            Implementación de nuevas funcionalidades y mejora continua de módulos críticos del sistema: historia clínica, turnos, 
+            portal del profesional y administrativo, lógica de precios,  llamador de paciente, reglas de negocio para convenios y 
+            aranceles por prestador, liquidaciones, entre otras.
+          </>,
+          <>
+            Tecnologias: CakePHP, Laravel, Python, JavaScript, Bootstrap, MySQL, MongoDB, Docker, GitLab, Visual Studio Code, Trello
           </>,
         ],
         images: [
           // optional: leave the array empty if you don't want to display images
           {
-            src: "/images/projects/project-01/cover-01.jpg",
+            src: "/images/projects/project-01/kozaca.png",
             alt: "Once UI Project",
-            width: 16,
-            height: 9,
+            width: 35,
+            height: 20,
           },
         ],
       },
       {
-        company: "Creativ3",
-        timeframe: "2018 - 2022",
-        role: "Lead Designer",
+        company: "Nuntius IT",
+        timeframe: "2021 - 2025",
+        role: "Software Developer",
         achievements: [
           <>
-            Developed a design system that unified the brand across multiple platforms, improving
-            design consistency by 40%.
+            Desarrollo y mantenimiento de un sistema integral de gestión para importadora internacional Luxus 
+            que cubre las áreas claves del negocio como  operaciones, comercial, importación, administración, finanzas y facturación.
           </>,
           <>
-            Led a cross-functional team to launch a new product line, contributing to a 15% increase
-            in overall company revenue.
+            Desarrollo y mantenimiento de sistema de gestión y página bingos del norte en Salta.
+          </>,
+          <>
+            Tecnologias: Ruby on Rails, Turbo Rails, Stimulus, Python, Nodejs, HTML, Bootstrap, Tailwind, JavaScript, Typescript, 
+            CSS, Docker, Azure, Gitlab, Visual Studio Code, Miro y Jira
           </>,
         ],
-        images: [],
+        images: [
+          // optional: leave the array empty if you don't want to display images
+          {
+            src: "/images/projects/project-01/nuntius.png",
+            alt: "Once UI Project",
+            width: 35,
+            height: 20,
+          },
+        ],
       },
     ],
   },
   studies: {
     display: true, // set to false to hide this section
-    title: "Studies",
+    title: "Educación",
     institutions: [
       {
-        name: "University of Jakarta",
-        description: <>Studied software engineering.</>,
+        name: "Universidad Nacional de La Plata (UNLP) - Facultad de Informática",
+        description: 
+        <>
+          Maestría y Especialización en Ingeniería de Software <br />
+          <span style={{ color: "#888", fontSize: "0.9em" }}>
+            En curso
+          </span>
+        </>,
       },
       {
-        name: "Build the Future",
-        description: <>Studied online marketing and personal branding.</>,
+        name: "Universidad Tecnológica Nacional (UTN) - Facultad Regional Resistencia Chaco",
+        description: 
+        <>
+          Diplomatura en Testing de Software <br />
+          <span style={{ color: "#888", fontSize: "0.9em" }}>
+            En curso
+          </span>
+        </>,
+      },
+      {
+        name: "Universidad Nacional de Salta (UNSa) - Facultad de Ciencias Exactas",
+        description: 
+        <>
+          Licenciatura en Análisis de Sistemas <br />
+          <span style={{ color: "#888", fontSize: "0.9em" }}>
+            Finalizado
+          </span>
+        </>,
       },
     ],
   },
   technical: {
     display: true, // set to false to hide this section
-    title: "Technical skills",
+    title: "Habilidades",
     skills: [
       {
-        title: "Figma",
-        description: (
-          <>Able to prototype in Figma with Once UI with unnatural speed.</>
-        ),
+        title: "Lenguajes de Programación",
         tags: [
           {
-            name: "Figma",
-            icon: "figma",
-          },
-        ],
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-02.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
+            name: "Java",
+            icon: "java",
           },
           {
-            src: "/images/projects/project-01/cover-03.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
+            name: "Python",
+            icon: "python",
           },
-        ],
-      },
-      {
-        title: "Next.js",
-        description: (
-          <>Building next gen apps with Next.js + Once UI + Supabase.</>
-        ),
-        tags: [
           {
             name: "JavaScript",
             icon: "javascript",
           },
           {
-            name: "Next.js",
-            icon: "nextjs",
+            name: "Php",
+            icon: "php",
           },
           {
-            name: "Supabase",
-            icon: "supabase",
+            name: "Ruby",
+            icon: "ruby",
           },
+          
         ],
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-04.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-        ],
+        
       },
+      {
+        title: "Frameworks",
+        tags: [
+          {
+            name: "Laravel",
+            icon: "laravel",
+          },
+          {
+            name: "CakePHP",
+            icon: "cakephp",
+          },
+          {
+            name: "Ruby on Rails",
+            icon: "rubyonrails",
+          },
+          {
+            name: "Node JS",
+            icon: "node",
+          },
+          {
+            name: "Flask",
+            icon: "flask",
+          },
+          {
+            name: "React",
+            icon: "react",
+          },
+          
+          {
+            name: "TailwindCSS",
+            icon: "tailwindcss",
+          },
+          {
+            name: "Bootstrap",
+            icon: "bootstrap",
+          },
+        ],
+        
+      },
+      {
+        title: "Herramientas",
+        tags: [
+          {
+            name: "Docker",
+            icon: "docker",
+          },
+          {
+            name: "Postman",
+            icon: "postman",
+          },
+          {
+            name: "VSCode",
+            icon: "vscode",
+          },
+          {
+            name: "Azure",
+            icon: "azure",
+          },
+          {
+            name: "Jira",
+            icon: "jira",
+          },
+          {
+            name: "Trello",
+            icon: "trello",
+          },    
+        ],
+        
+      },
+      {
+        title: "Bases de Datos",
+        tags: [
+          {
+            name: "MySQL",
+            icon: "mysql",
+          },
+          {
+            name: "PostgreSQL",
+            icon: "postgresql",
+          },
+          {
+            name: "Mongo",
+            icon: "mongo",
+          },
+          {
+            name: "Redis",
+            icon: "redis",
+          },  
+        ],
+        
+      },
+      
     ],
   },
 };
@@ -243,9 +339,9 @@ const blog: Blog = {
 
 const work: Work = {
   path: "/work",
-  label: "Work",
-  title: `Projects – ${person.name}`,
-  description: `Design and dev projects by ${person.name}`,
+  label: "Proyectos",
+  title: `Proyectos – ${person.name}`,
+  description: `Diseño y proyectos desarrollados por ${person.name}`,
   // Create new project pages by adding a new .mdx file to app/blog/posts
   // All projects will be listed on the /home and /work routes
 };
