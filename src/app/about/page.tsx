@@ -96,13 +96,18 @@ export default function About() {
             <Avatar src={person.avatar} size="xl" />
             <Heading 
               className={styles.textAlign} 
-              variant="display-strong-xs">
+              variant="display-strong-xs"
+              style={{ marginBottom: "-4px" }}
+            >
               {person.name}
             </Heading>
+
             <Heading 
               className={styles.textAlign} 
               variant="display-default-xs"
-              onBackground="neutral-weak">
+              onBackground="neutral-weak"
+              style={{ marginTop: "-14px" }}
+            >
               {person.role}
             </Heading>
             

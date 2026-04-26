@@ -11,17 +11,18 @@ import {
   SocialSharingConfig,
   StyleConfig,
 } from "@/types";
+
 import { home } from "./index";
 
 // IMPORTANT: Replace with your own domain address - it's used for SEO in meta tags and schema
 const baseURL: string = "https://demo.magic-portfolio.com";
 
 const routes: RoutesConfig = {
-  //"/": true,
-  "/about": true,
+  "/": true,
+  "/about": false,
   "/work": true,
-  "/blog": true,
-  "/gallery": true,
+  "/blog": false,
+  "/gallery": false,
 };
 
 const display: DisplayConfig = {
@@ -75,7 +76,7 @@ const fonts: FontsConfig = {
 const style: StyleConfig = {
   theme: "system", // dark | light | system
   neutral: "gray", // sand | gray | slate | mint | rose | dusk | custom
-  brand: "cyan", // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan | custom
+  brand: "blue", // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan | custom
   accent: "red", // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan | custom
   solid: "contrast", // color | contrast
   solidStyle: "flat", // flat | plastic

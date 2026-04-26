@@ -5,7 +5,7 @@ const person: Person = {
   firstName: "Emanuel",
   lastName: "Barboza",
   name: `Emanuel Barboza`,
-  role: "Software Engineer",
+  role: "Project Manager - Scrum Master",
   avatar: "/images/perfil.png",
   email: "emanuelbarboza5@gmail.com"
 };
@@ -36,7 +36,13 @@ const social: Social = [
     name: "Instagram",
     icon: "instagram",
     link: "https://www.instagram.com/argis_lab/",
-    essential: false,
+    essential: true,
+  },
+  {
+    name: "Whatsapp",
+    icon: "whatsapp",
+    link: `https://wa.me/5493874659911`,
+    essential: true,
   },
   {
     name: "Email",
@@ -47,7 +53,7 @@ const social: Social = [
 ];
 
 const home: Home = {
-  path: "/",
+  path: "/about",
   image: "/images/og/home.jpg",
   label: "Home",
   title: `${person.name}'s Portfolio`,
@@ -94,14 +100,15 @@ const about: About = {
     title: "Introducción",
     description: (
       <>
-        Soy Licenciado en Análisis de Sistemas y me encuentro finalizando una Maestría en Ingeniería de Software. 
-        A lo largo de mi trayectoria he participado en proyectos académicos y de la industria. 
-        Cuento con experiencia en diseño, desarrollo e implementación de sistemas. 
-        Estoy interesado en construir soluciones robustas, escalables y mantenibles, poniendo foco en la calidad del código y la mejora continua.
-
-        Además, tengo una fuerte base trabajo en equipo, colaboración activa y adaptación a entornos dinámicos. 
-        Disfruto aprender nuevas tecnologías, explorar herramientas y 
-        enfrentar desafíos técnicos que aporten valor real a los proyectos en los que participo.
+        Soy Licenciado en Análisis de Sistemas, cuento con experiencia en docencia
+        y desarrollo de software tanto en ámbitos académicos como en la industria. A lo largo de mi carrera he desarrollado una fuerte orientación 
+        hacia la gestión de proyectos y la agilidad, combinando conocimientos técnicos con una visión estratégica para acompañar a los equipos en la entrega de valor.
+        Me apasiona trabajar con metodologías ágiles, facilitando la colaboración, la mejora continua y la adaptación al cambio. 
+        <br/>
+        <br/>
+        Busco ayudar a los equipos a ser más efectivos, promoviendo buenas prácticas, comunicación clara y entornos de trabajo saludables.
+        Cuento con certificaciones y con experiencia como Scrum Master, lo que me permite desempeñarme como nexo entre lo técnico y lo organizacional. 
+        Disfruto aprender constantemente, explorar nuevas herramientas y metodologías, y generar impacto positivo tanto en los equipos como en los productos.
       </>
     ),
   },
@@ -235,14 +242,7 @@ const about: About = {
       {
         title: "Frameworks",
         tags: [
-          {
-            name: "Laravel",
-            icon: "laravel",
-          },
-          {
-            name: "CakePHP",
-            icon: "cakephp",
-          },
+          
           {
             name: "Ruby on Rails",
             icon: "rubyonrails",
@@ -258,6 +258,15 @@ const about: About = {
           {
             name: "React",
             icon: "react",
+          },
+
+          {
+            name: "Laravel",
+            icon: "laravel",
+          },
+          {
+            name: "CakePHP",
+            icon: "cakephp",
           },
           
           {
@@ -329,8 +338,8 @@ const about: About = {
 };
 
 const blog: Blog = {
-  path: "/blog",
-  label: "Blog",
+  path: "/about",
+  label: "About",
   title: "Writing about design and tech...",
   description: `Read what ${person.name} has been up to recently`,
   // Create new blog posts by adding a new .mdx file to app/blog/posts
