@@ -94,22 +94,44 @@ export default function About() {
             horizontal="center"
           >
             <Avatar src={person.avatar} size="xl" />
-            <Heading 
-              className={styles.textAlign} 
-              variant="display-strong-xs"
-              style={{ marginBottom: "-4px" }}
-            >
-              {person.name}
-            </Heading>
+            <Column gap="4" horizontal="center">
+              <Heading
+                className={styles.textAlign}
+                variant="heading-strong-xl"
+                style={{
+                  letterSpacing: "-0.04em",
+                  lineHeight: "1.05",
+                  marginTop: "4px",
+                }}
+              >
+                {person.name}
+              </Heading>
 
-            <Heading 
-              className={styles.textAlign} 
-              variant="display-default-xs"
-              onBackground="neutral-weak"
-              style={{ marginTop: "-14px" }}
-            >
-              {person.role}
-            </Heading>
+              <Text
+                className={styles.textAlign}
+                variant="body-default-xl"
+                onBackground="neutral-weak"
+                style={{
+                  lineHeight: "1.35",
+                  //maxWidth: "200px",
+                  marginTop: "4px",
+                }}
+              >
+                {person.role}
+              </Text>
+
+              {/* <Text
+                className={styles.textAlign}
+                variant="body-default-l"
+                onBackground="brand-weak"
+                style={{
+                  fontWeight: 600,
+                  marginTop: "4px",
+                }}
+              >
+                Project Manager | Scrum Master
+              </Text> */}
+            </Column>
             
           </Column>
         )}
@@ -137,7 +159,7 @@ export default function About() {
                 }}
               >
                 <Icon paddingLeft="12" name="calendar" onBackground="brand-weak" />
-                <Row paddingX="8">Agendar reunión</Row>
+                <Row paddingX="8">Trabajemos juntos</Row>
                 <IconButton
                   href={about.calendar.link}
                   data-border="rounded"
@@ -146,7 +168,7 @@ export default function About() {
                 />
               </Row>
             )}
-            
+
             {social.length > 0 && (
               <Row
                 className={styles.blockAlign}
@@ -168,6 +190,8 @@ export default function About() {
                           <Button
                             key={item.name}
                             href={item.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
                             prefixIcon={item.icon}
                             label={item.name}
                             size="s"
@@ -264,10 +288,17 @@ export default function About() {
               <Column fillWidth gap="l" marginBottom="40">
                 {about.studies.institutions.map((institution, index) => (
                   <Column key={`${institution.name}-${index}`} fillWidth gap="4">
-                    <Text id={institution.name} variant="heading-strong-l">
+                    <Text
+                      variant="heading-strong-l"
+                      style={{ marginBottom: "4px" }}
+                    >
                       {institution.name}
                     </Text>
-                    <Text variant="heading-default-xs" onBackground="neutral-weak">
+
+                    <Text
+                      variant="body-default-m"
+                      onBackground="neutral-medium"
+                    >
                       {institution.description}
                     </Text>
                   </Column>

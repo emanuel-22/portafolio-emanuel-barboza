@@ -146,6 +146,8 @@ export default function About() {
                 />
               </Row>
             )}
+
+            
             
             {social.length > 0 && (
               <Row

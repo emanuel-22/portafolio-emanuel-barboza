@@ -43,8 +43,8 @@ const TableOfContents: React.FC<TableOfContentsProps> = ({ structure, about }) =
         whiteSpace: "nowrap",
       }}
       position="fixed"
-      paddingLeft="24"
-      gap="32"
+      paddingLeft="16"
+      gap="20"
       m={{ hide: true }}
     >
       {structure
@@ -59,7 +59,9 @@ const TableOfContents: React.FC<TableOfContentsProps> = ({ structure, about }) =
               onClick={() => scrollTo(section.title, 80)}
             >
               <Flex height="1" minWidth="16" background="neutral-strong"></Flex>
-              <Text>{section.title}</Text>
+              <Text variant="body-default-s" onBackground="neutral-weak">
+                {section.title}
+              </Text>
             </Flex>
             {about.tableOfContent.subItems && (
               <>

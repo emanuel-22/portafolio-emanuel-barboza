@@ -5,13 +5,13 @@ const person: Person = {
   firstName: "Emanuel",
   lastName: "Barboza",
   name: `Emanuel Barboza`,
-  role: "Project Manager - Scrum Master",
+  role: "Project Manager | Scrum Master",
   avatar: "/images/perfil.png",
   email: "emanuelbarboza5@gmail.com"
 };
 
 const newsletter: Newsletter = {
-  display: true,
+  display: false,
   title: <>Subscribe to {person.firstName}'s Newsletter</>,
   description: <>My weekly newsletter about creativity and engineering</>,
 };
@@ -24,7 +24,7 @@ const social: Social = [
     name: "GitHub",
     icon: "github",
     link: "https://github.com/emanuel-22",
-    essential: true,
+    essential: false,
   },
   {
     name: "LinkedIn",
@@ -50,32 +50,34 @@ const social: Social = [
     link: `mailto:${person.email}`,
     essential: true,
   },
+  {
+    name: "Descargar CV",
+    icon: "document",
+    link: "/files/CV_Barboza_PM.pdf",
+    essential: true,
+  },
 ];
 
 const home: Home = {
-  path: "/about",
+  path: "/",
   image: "/images/og/home.jpg",
-  label: "Home",
-  title: `${person.name}'s Portfolio`,
-  description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Building bridges between design and code</>,
+  label: "Inicio",
+  title: `${person.name} | Project Manager & Scrum Master`,
+  description: `Portfolio profesional de ${person.name}, Project Manager y Scrum Master con base técnica en desarrollo de software.`,
+  headline: <>Impulsando equipos y productos digitales con enfoque ágil</>,
   featured: {
-    display: true,
-    title: (
-      <Row gap="12" vertical="center">
-        <strong className="ml-4">Once UI</strong>{" "}
-        <Line background="brand-alpha-strong" vert height="20" />
-        <Text marginRight="4" onBackground="brand-medium">
-          Featured work
-        </Text>
-      </Row>
-    ),
-    href: "/work/building-once-ui-a-customizable-design-system",
+    display: false,
+    title: <></>,
+    href: "",
   },
   subline: (
     <>
-    I'm Selene, a design engineer at <Text as="span" size="xl" weight="strong">ONCE UI</Text>, where I craft intuitive <br /> user experiences. After hours, I build my own projects.
-</>
+      Ayudo a equipos de desarrollo a entregar valor de forma continua,
+      combinando metodologías ágiles con una sólida base técnica.
+      <br />
+      Trabajo como Scrum Master y Project Manager facilitando procesos,
+      eliminando impedimentos y alineando negocio, tecnología y producto.
+    </>
   ),
 };
 
@@ -100,15 +102,29 @@ const about: About = {
     title: "Introducción",
     description: (
       <>
-        Soy Licenciado en Análisis de Sistemas, cuento con experiencia en docencia
-        y desarrollo de software tanto en ámbitos académicos como en la industria. A lo largo de mi carrera he desarrollado una fuerte orientación 
-        hacia la gestión de proyectos y la agilidad, combinando conocimientos técnicos con una visión estratégica para acompañar a los equipos en la entrega de valor.
-        Me apasiona trabajar con metodologías ágiles, facilitando la colaboración, la mejora continua y la adaptación al cambio. 
-        <br/>
-        <br/>
-        Busco ayudar a los equipos a ser más efectivos, promoviendo buenas prácticas, comunicación clara y entornos de trabajo saludables.
-        Cuento con certificaciones y con experiencia como Scrum Master, lo que me permite desempeñarme como nexo entre lo técnico y lo organizacional. 
-        Disfruto aprender constantemente, explorar nuevas herramientas y metodologías, y generar impacto positivo tanto en los equipos como en los productos.
+        Soy Licenciado en Análisis de Sistemas y actualmente me especializo
+        en la gestión de proyectos tecnológicos y metodologías ágiles. Me desempeño como Scrum Master y Project Manager, facilitando equipos
+        multidisciplinarios y promoviendo prácticas ágiles como Scrum y Kanban,
+        con foco en la entrega continua de valor.
+
+        <br /><br />
+
+        Tengo experiencia trabajando con desarrolladores, UX/UI y QA,
+        alineando objetivos de negocio con soluciones técnicas. Cuento con una combinación de visión técnica y estratégica,
+        lo que me permite tomar decisiones informadas y acompañar al equipo
+        de manera efectiva.
+
+        <br /><br />
+
+        Me enfoco en:
+        <br />
+        • Mejora continua de procesos
+        <br />
+        • Gestión de backlog y priorización
+        <br />
+        • Definición de métricas agiles
+        <br />
+        • Facilitación y coaching ágil
       </>
     ),
   },
@@ -117,58 +133,68 @@ const about: About = {
     title: "Experiencia Laboral",
     experiences: [
       {
-        company: "Kozaca",
-        timeframe: "2025 - Actualidad",
-        role: "Ssr Software Developer",
+        company: "Proyecto DAR IT",
+        timeframe: "Junio 2025 - Noviembre 2025",
+        role: "Scrum Master",
         achievements: [
           <>
-            Desarrollo y mantenimiento de plataformas web Red-i  para gestión de clínicas y Convenia Salud para financiadores de salud.
+            Acompañamiento ágil en el desarrollo de una página web para el refugio
+            Red4Patas, orientada a impulsar la adopción de animales.
           </>,
           <>
-            Implementación de nuevas funcionalidades y mejora continua de módulos críticos del sistema: historia clínica, turnos, 
-            portal del profesional y administrativo, lógica de precios,  llamador de paciente, reglas de negocio para convenios y 
-            aranceles por prestador, liquidaciones, entre otras.
+            Facilitación del trabajo entre desarrollo, diseño UX/UI y QA,
+            promoviendo autoorganización, mejora continua y comunicación efectiva.
           </>,
           <>
-            Tecnologias: CakePHP, Laravel, Python, JavaScript, Bootstrap, MySQL, MongoDB, Docker, GitLab, Visual Studio Code, Trello
+            Participación en reuniones con Product Owner, Project Manager y cliente
+            para alinear expectativas, objetivos y entregables.
           </>,
         ],
-        images: [
-          // optional: leave the array empty if you don't want to display images
-          {
-            src: "/images/projects/project-01/kozaca.png",
-            alt: "Once UI Project",
-            width: 35,
-            height: 20,
-          },
-        ],
+        images: [],
       },
       {
-        company: "Nuntius IT",
-        timeframe: "2021 - 2025",
-        role: "Software Developer",
+        company: "UPATecO",
+        timeframe: "Julio 2025 - Octubre 2025",
+        role: "Docente Universitario (Gestión de Proyectos Ágiles)",
         achievements: [
           <>
-            Desarrollo y mantenimiento de un sistema integral de gestión para importadora internacional Luxus 
-            que cubre las áreas claves del negocio como  operaciones, comercial, importación, administración, finanzas y facturación.
+            Dictado del curso universitario “Gestión de Proyectos Tecnológicos mediante
+            Enfoque Ágil”, aprobado por Resolución Rectoral N° 496/25.
           </>,
           <>
-            Desarrollo y mantenimiento de sistema de gestión y página bingos del norte en Salta.
+            Formación en metodologías ágiles como Scrum, Kanban y Lean Thinking,
+            aplicadas a la gestión de proyectos tecnológicos.
           </>,
           <>
-            Tecnologias: Ruby on Rails, Turbo Rails, Stimulus, Python, Nodejs, HTML, Bootstrap, Tailwind, JavaScript, Typescript, 
-            CSS, Docker, Azure, Gitlab, Visual Studio Code, Miro y Jira
+            Desarrollo de competencias en planificación colaborativa, gestión iterativa
+            e implementación de enfoques ágiles en contextos reales.
+          </>,
+          <>
+            Fomento del trabajo en equipo, la comunicación efectiva y la mejora continua
+            en iniciativas tecnológicas.
           </>,
         ],
-        images: [
-          // optional: leave the array empty if you don't want to display images
-          {
-            src: "/images/projects/project-01/nuntius.png",
-            alt: "Once UI Project",
-            width: 35,
-            height: 20,
-          },
+        images: [],
+      },
+      {
+        company: "MakisanTech IT",
+        timeframe: "Octubre 2024 - Marzo 2025",
+        role: "Scrum Master",
+        achievements: [
+          <>
+            Optimización del flujo de trabajo para el desarrollo de una plataforma
+            web de publicación de eventos culturales en Salta.
+          </>,
+          <>
+            Coordinación con el cliente para priorizar el Product Backlog y alinear
+            los entregables con las necesidades del producto.
+          </>,
+          <>
+            Colaboración con equipo multidisciplinario de diseño UX/UI, frontend y
+            backend, incorporando buenas prácticas ágiles.
+          </>,
         ],
+        images: [],
       },
     ],
   },
@@ -177,32 +203,42 @@ const about: About = {
     title: "Educación",
     institutions: [
       {
-        name: "Universidad Nacional de La Plata (UNLP) - Facultad de Informática",
+        name: "Universidad Nacional de La Plata",
         description: 
         <>
-          Maestría y Especialización en Ingeniería de Software <br />
+          <strong>Maestría y Especialización en Ingeniería de Software </strong><br />
           <span style={{ color: "#888", fontSize: "0.9em" }}>
-            En curso
+            Facultad de Informática · En curso
           </span>
         </>,
       },
       {
-        name: "Universidad Tecnológica Nacional (UTN) - Facultad Regional Resistencia Chaco",
+        name: "Universidad Tecnológica Nacional",
         description: 
         <>
-          Diplomatura en Testing de Software <br />
+          <strong>Diplomatura en Testing de Software </strong><br />
           <span style={{ color: "#888", fontSize: "0.9em" }}>
-            En curso
+            Facultad Regional Resistencia · En curso
           </span>
         </>,
       },
       {
-        name: "Universidad Nacional de Salta (UNSa) - Facultad de Ciencias Exactas",
+        name: "Universidad Tecnológica Nacional",
         description: 
         <>
-          Licenciatura en Análisis de Sistemas <br />
+          <strong>Diplomatura en Metodologías y Marcos de Trabajo Ágiles </strong><br />
           <span style={{ color: "#888", fontSize: "0.9em" }}>
-            Finalizado
+            Facultad Regional Buenos Aires · Finalizado
+          </span>
+        </>,
+      },
+      {
+        name: "Universidad Nacional de Salta",
+        description: 
+        <>
+          <strong>Licenciatura en Análisis de Sistemas </strong><br />
+          <span style={{ color: "#888", fontSize: "0.9em" }}>
+            Facultad de Ciencias Exactas · Finalizado
           </span>
         </>,
       },
@@ -213,72 +249,33 @@ const about: About = {
     title: "Habilidades",
     skills: [
       {
-        title: "Lenguajes de Programación",
+        title: "Gestión Ágil y Producto",
         tags: [
           {
-            name: "Java",
-            icon: "java",
+            name: "Scrum",
+            icon: "rocket",
           },
           {
-            name: "Python",
-            icon: "python",
+            name: "Kanban",
+            icon: "grid",
           },
           {
-            name: "JavaScript",
-            icon: "javascript",
+            name: "Product Backlog",
+            icon: "book",
           },
           {
-            name: "Php",
-            icon: "php",
+            name: "KPIs / OKRs",
+            icon: "document",
           },
           {
-            name: "Ruby",
-            icon: "ruby",
-          },
-          
-        ],
-        
-      },
-      {
-        title: "Frameworks",
-        tags: [
-          
-          {
-            name: "Ruby on Rails",
-            icon: "rubyonrails",
+            name: "Design Thinking",
+            icon: "figma",
           },
           {
-            name: "Node JS",
-            icon: "node",
-          },
-          {
-            name: "Flask",
-            icon: "flask",
-          },
-          {
-            name: "React",
-            icon: "react",
-          },
-
-          {
-            name: "Laravel",
-            icon: "laravel",
-          },
-          {
-            name: "CakePHP",
-            icon: "cakephp",
-          },
-          
-          {
-            name: "TailwindCSS",
-            icon: "tailwindcss",
-          },
-          {
-            name: "Bootstrap",
-            icon: "bootstrap",
+            name: "Facilitación",
+            icon: "person",
           },
         ],
-        
       },
       {
         title: "Herramientas",
@@ -292,10 +289,6 @@ const about: About = {
             icon: "postman",
           },
           {
-            name: "VSCode",
-            icon: "vscode",
-          },
-          {
             name: "Azure",
             icon: "azure",
           },
@@ -307,28 +300,6 @@ const about: About = {
             name: "Trello",
             icon: "trello",
           },    
-        ],
-        
-      },
-      {
-        title: "Bases de Datos",
-        tags: [
-          {
-            name: "MySQL",
-            icon: "mysql",
-          },
-          {
-            name: "PostgreSQL",
-            icon: "postgresql",
-          },
-          {
-            name: "Mongo",
-            icon: "mongo",
-          },
-          {
-            name: "Redis",
-            icon: "redis",
-          },  
         ],
         
       },

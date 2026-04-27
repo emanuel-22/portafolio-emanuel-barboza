@@ -38,6 +38,7 @@ import {
   SiCakephp,
   SiFlask,
   SiPostman,
+  SiScrumalliance,
 } from "react-icons/si";
 
 import { 
@@ -81,6 +82,7 @@ export const iconLibrary: Record<string, IconType> = {
   eyeOff: HiOutlineEyeSlash,
   github: FaGithub,
   linkedin: FaLinkedin,
+  scrum: SiScrumalliance,
   x: FaX,
   twitter: FaXTwitter,
   threads: FaThreads,

@@ -1,39 +1,29 @@
-# Magic Portfolio
+# Portfolio de Gestión | Emanuel Barboza
 
-Magic Portfolio is a simple, clean, beginner-friendly portfolio template. It supports an MDX-based content system for projects and blog posts, an about / CV page and a gallery.
+Based in [here](https://demo.magic-portfolio.com).
 
-View the demo [here](https://demo.magic-portfolio.com).
 
-![Magic Portfolio](public/images/og/home.jpg)
-
-## Getting started
-
-**1. Clone the repository**
-```
-git clone https://github.com/once-ui-system/magic-portfolio.git
-```
-
-**2. Install dependencies**
+**1. Install dependencies**
 ```
 npm install
 ```
 
-**3. Run dev server**
+**2. Run dev server**
 ```
 npm run dev
 ```
 
-**4. Edit config**
+**3. Edit config**
 ```
 src/resources/once-ui.config.js
 ```
 
-**5. Edit content**
+**4. Edit content**
 ```
 src/resources/content.js
 ```
 
-**6. Create blog posts / projects**
+**5. Create blog posts / projects**
 ```
 Add a new .mdx file to src/app/blog/posts or src/app/work/projects
 ```
