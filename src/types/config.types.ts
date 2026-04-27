@@ -155,8 +155,7 @@ export type SocialSharingConfig = {
   platforms: {
     x: boolean;
     linkedin: boolean;
-    instagram: boolean;
-    github: boolean;
+    
     facebook: boolean;
     pinterest: boolean;
     whatsapp: boolean;

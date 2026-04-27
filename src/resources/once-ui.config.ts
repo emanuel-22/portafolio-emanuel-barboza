@@ -197,8 +197,8 @@ const schema: SchemaConfig = {
 // social links
 const sameAs: SameAsConfig = {
   linkedin: "https://www.linkedin.com/in/emabarboza/",
-  instagram: "https://www.instagram.com/argis_lab/",
-  github: "https://github.com/emanuel-22",
+  threads: "",
+  discord: "",
 
 };
 
@@ -208,8 +208,6 @@ const socialSharing: SocialSharingConfig = {
   platforms: {
     x: true,
     linkedin: true,
-    instagram: true,
-    github: true,
     facebook: false,
     pinterest: false,
     whatsapp: false,
