@@ -244,6 +244,8 @@ const about: About = {
       },
     ],
   },
+
+  
   technical: {
     display: true, // set to false to hide this section
     title: "Habilidades",

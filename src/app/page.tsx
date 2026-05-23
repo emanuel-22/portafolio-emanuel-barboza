@@ -14,6 +14,7 @@ import {
 } from "@once-ui-system/core";
 import { baseURL, about, person, social } from "@/resources";
 import TableOfContents from "@/components/about/TableOfContents";
+import CertificatesCarousel from "@/components/about/CertificatesCarousel";
 import styles from "@/components/about/about.module.scss";
 import React from "react";
 
@@ -50,6 +51,7 @@ export default function About() {
       items: about.technical.skills.map((skill) => skill.title),
     },
   ];
+
   return (
     <Column maxWidth="m">
       <Schema
@@ -65,6 +67,7 @@ export default function About() {
           image: `${baseURL}${person.avatar}`,
         }}
       />
+
       {about.tableOfContent.display && (
         <Column
           left="0"
@@ -77,72 +80,30 @@ export default function About() {
           <TableOfContents structure={structure} about={about} />
         </Column>
       )}
-      <Row fillWidth s={{ direction: "column"}} horizontal="center">
+
+      <Column fillWidth horizontal="center" gap="32">
         {about.avatar.display && (
           <Column
-            className={styles.avatar}
-            top="64"
-            fitHeight
-            position="sticky"
-            s={{ position: "relative", style: { top: "auto" } }}
-            xs={{ style: { top: "auto" } }}
-            minWidth="160"
-            paddingX="l"
-            paddingBottom="xl"
-            gap="m"
-            flex={3}
+            className="profile-hero"
+            fillWidth
             horizontal="center"
+            gap="16"
+            paddingY="40"
           >
             <Avatar src={person.avatar} size="xl" />
-            <Column gap="4" horizontal="center">
-              <Heading
-                className={styles.textAlign}
-                variant="heading-strong-xl"
-                style={{
-                  letterSpacing: "-0.04em",
-                  lineHeight: "1.05",
-                  marginTop: "4px",
-                }}
-              >
-                {person.name}
-              </Heading>
 
-              <Text
-                className={styles.textAlign}
-                variant="body-default-xl"
-                onBackground="neutral-weak"
-                style={{
-                  lineHeight: "1.35",
-                  //maxWidth: "200px",
-                  marginTop: "4px",
-                }}
-              >
-                {person.role}
-              </Text>
+            <Heading as="h1" variant="display-strong-l" align="center">
+              {person.name}
+            </Heading>
 
-              {/* <Text
-                className={styles.textAlign}
-                variant="body-default-l"
-                onBackground="brand-weak"
-                style={{
-                  fontWeight: 600,
-                  marginTop: "4px",
-                }}
-              >
-                Project Manager | Scrum Master
-              </Text> */}
-            </Column>
-            
-          </Column>
-        )}
-        <Column className={styles.blockAlign} flex={9} maxWidth={40}>
-          <Column
-            id={about.intro.title}
-            fillWidth
-            minHeight="160"
-            vertical="center"
-            marginBottom="32"
-          >
+            <Text
+              variant="heading-default-m"
+              onBackground="neutral-weak"
+              align="center"
+            >
+              {person.role}
+            </Text>
+
             {about.calendar.display && (
               <Row
                 fitWidth
@@ -151,9 +112,7 @@ export default function About() {
                 radius="full"
                 padding="4"
                 gap="8"
-                marginBottom="m"
                 vertical="center"
-                className={styles.blockAlign}
                 style={{
                   backdropFilter: "blur(var(--static-space-1))",
                 }}
@@ -171,9 +130,7 @@ export default function About() {
 
             {social.length > 0 && (
               <Row
-                className={styles.blockAlign}
-                paddingTop="20"
-                paddingBottom="8"
+                paddingTop="8"
                 gap="8"
                 wrap
                 horizontal="center"
@@ -181,188 +138,233 @@ export default function About() {
                 data-border="rounded"
               >
                 {social
-                      .filter((item) => item.essential)
-                      .map(
-                  (item) =>
-                    item.link && (
-                      <React.Fragment key={item.name}>
-                        <Row s={{ hide: true }}>
-                          <Button
-                            key={item.name}
-                            href={item.link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            prefixIcon={item.icon}
-                            label={item.name}
-                            size="s"
-                            weight="default"
-                            variant="secondary"
-                          />
-                        </Row>
-                        <Row hide s={{ hide: false }}>
-                          <IconButton
-                            size="l"
-                            key={`${item.name}-icon`}
-                            href={item.link}
-                            icon={item.icon}
-                            variant="secondary"
-                          />
-                        </Row>
-                      </React.Fragment>
-                    ),
-                )}
+                  .filter((item) => item.essential)
+                  .map(
+                    (item) =>
+                      item.link && (
+                        <Button
+                          key={item.name}
+                          href={item.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          prefixIcon={item.icon}
+                          label={item.name}
+                          size="s"
+                          weight="default"
+                          variant="secondary"
+                        />
+                      ),
+                  )}
               </Row>
             )}
           </Column>
+        )}
 
+        <Column className={styles.blockAlign} fillWidth maxWidth="m">
           {about.intro.display && (
-            <Column textVariant="body-default-l" fillWidth gap="m" marginBottom="xl">
-              {about.intro.description}
-            </Column>
+            <section className="about-intro-section">
+              <div className="section-heading">
+                <span>Sobre mí</span>
+
+                <Heading
+                  as="h2"
+                  id={about.intro.title}
+                  variant="display-strong-s"
+                >
+                  Transformando equipos y proyectos digitales
+                </Heading>
+              </div>
+
+              <div className="about-intro-card">
+                <Text variant="body-default-l">
+                  Soy Licenciado en Análisis de Sistemas y me especializo en
+                  gestión de proyectos tecnológicos y metodologías ágiles,
+                  combinando visión técnica con liderazgo colaborativo.
+                </Text>
+
+                <Text variant="body-default-l">
+                  Trabajo facilitando equipos multidisciplinarios, alineando
+                  objetivos de negocio, producto y tecnología para impulsar
+                  entregas continuas de valor.
+                </Text>
+              </div>
+
+              <div className="about-highlights">
+                <div className="about-highlight-card">
+                  <h3>⚡ Agile Leadership</h3>
+                  <p>
+                    Facilitación de equipos Scrum y mejora continua de procesos.
+                  </p>
+                </div>
+
+                <div className="about-highlight-card">
+                  <h3>📊 Product & Delivery</h3>
+                  <p>
+                    Gestión de backlog, métricas ágiles y coordinación de entregas.
+                  </p>
+                </div>
+
+                <div className="about-highlight-card">
+                  <h3>🤝 Colaboración en Equipo</h3>
+                  <p>
+                    Comunicación efectiva entre negocio, UX/UI, QA y desarrollo.
+                  </p>
+                </div>
+
+                <div className="about-highlight-card">
+                  <h3>💡 Background Técnico</h3>
+                  <p>
+                    Base sólida en desarrollo de software.
+                  </p>
+                </div>
+              </div>
+            </section>
           )}
 
           {about.work.display && (
-            <>
-              <Heading as="h2" id={about.work.title} variant="display-strong-s" marginBottom="m">
-                {about.work.title}
-              </Heading>
-              <Column fillWidth gap="l" marginBottom="40">
+            <section className="portfolio-section">
+              <div className="section-heading">
+                <span>Trayectoria</span>
+                <Heading as="h2" id={about.work.title} variant="display-strong-s">
+                  {about.work.title}
+                </Heading>
+              </div>
+
+              <Column fillWidth gap="24" marginBottom="40">
                 {about.work.experiences.map((experience, index) => (
-                  <Column key={`${experience.company}-${experience.role}-${index}`} fillWidth>
-                    <Row fillWidth horizontal="between" vertical="end" marginBottom="4">
-                      <Text id={experience.company} variant="heading-strong-l">
-                        {experience.company}
-                      </Text>
-                      <Text variant="heading-default-xs" onBackground="neutral-weak">
-                        {experience.timeframe}
-                      </Text>
-                    </Row>
-                    <Text variant="body-default-s" onBackground="brand-weak" marginBottom="m">
-                      {experience.role}
-                    </Text>
-                    <Column as="ul" gap="16">
+                  <article
+                    key={`${experience.company}-${experience.role}-${index}`}
+                    className="experience-card"
+                  >
+                    <div className="experience-card-header">
+                      <div>
+                        <Text id={experience.company} variant="heading-strong-l">
+                          {experience.company}
+                        </Text>
+                        <br/>
+                        <Text variant="body-default-m" onBackground="brand-weak">
+                          {experience.role}
+                        </Text>
+                      </div>
+
+                      <span className="experience-date">{experience.timeframe}</span>
+                    </div>
+
+                    <ul className="experience-list">
                       {experience.achievements.map(
                         (achievement: React.ReactNode, index: number) => (
-                          <Text
-                            as="li"
-                            variant="body-default-m"
-                            key={`${experience.company}-${index}`}
-                          >
+                          <li key={`${experience.company}-${index}`}>
                             {achievement}
-                          </Text>
+                          </li>
                         ),
                       )}
-                    </Column>
-                    {experience.images && experience.images.length > 0 && (
-                      <Row fillWidth paddingTop="m" paddingLeft="40" gap="12" wrap>
-                        {experience.images.map((image, index) => (
-                          <Row
-                            key={index}
-                            border="neutral-medium"
-                            radius="m"
-                            minWidth={image.width}
-                            height={image.height}
-                          >
-                            <Media
-                              enlarge
-                              radius="m"
-                              sizes={image.width.toString()}
-                              alt={image.alt}
-                              src={image.src}
-                            />
-                          </Row>
-                        ))}
-                      </Row>
-                    )}
-                  </Column>
+                    </ul>
+                  </article>
                 ))}
               </Column>
-            </>
+            </section>
           )}
 
           {about.studies.display && (
-            <>
-              <Heading as="h2" id={about.studies.title} variant="display-strong-s" marginBottom="m">
-                {about.studies.title}
-              </Heading>
-              <Column fillWidth gap="l" marginBottom="40">
-                {about.studies.institutions.map((institution, index) => (
-                  <Column key={`${institution.name}-${index}`} fillWidth gap="4">
-                    <Text
-                      variant="heading-strong-l"
-                      style={{ marginBottom: "4px" }}
-                    >
-                      {institution.name}
-                    </Text>
+            <section className="portfolio-section">
+              <div className="section-heading">
+                <span>Formación académica</span>
+                <Heading as="h2" id={about.studies.title} variant="display-strong-s">
+                  {about.studies.title}
+                </Heading>
+              </div>
 
-                    <Text
-                      variant="body-default-m"
-                      onBackground="neutral-medium"
-                    >
-                      {institution.description}
-                    </Text>
-                  </Column>
+              <div className="education-grid">
+                {about.studies.institutions.map((institution, index) => (
+                  <article key={`${institution.name}-${index}`} className="education-card">
+                    <div className="education-icon">
+                      🎓
+                    </div>
+
+                    <div>
+                      <Text
+                        id={institution.name}
+                        variant="heading-strong-m"
+                        style={{ marginBottom: "6px" }}
+                      >
+                        {institution.name}
+                      </Text>
+                      <br/>
+                      <Text variant="body-default-m" onBackground="neutral-medium">
+                        {institution.description}
+                      </Text>
+                    </div>
+                  </article>
                 ))}
-              </Column>
-            </>
+              </div>
+            </section>
           )}
+
+          <CertificatesCarousel />
+
+          <br />
 
           {about.technical.display && (
-            <>
-              <Heading
-                as="h2"
-                id={about.technical.title}
-                variant="display-strong-s"
-                marginBottom="40"
-              >
-                {about.technical.title}
-              </Heading>
-              <Column fillWidth gap="l">
+            <section className="portfolio-section">
+              <div className="section-heading">
+                <span>Expertise</span>
+
+                <Heading
+                  as="h2"
+                  id={about.technical.title}
+                  variant="display-strong-s"
+                >
+                  {about.technical.title}
+                </Heading>
+              </div>
+
+              <div className="skills-grid">
                 {about.technical.skills.map((skill, index) => (
-                  <Column key={`${skill}-${index}`} fillWidth gap="4">
-                    <Text id={skill.title} variant="heading-strong-l">
-                      {skill.title}
-                    </Text>
-                    <Text variant="body-default-m" onBackground="neutral-weak">
-                      {skill.description}
-                    </Text>
+                  <article
+                    key={`${skill.title}-${index}`}
+                    className="skill-card"
+                  >
+                    <div className="skill-card-header">
+                      <Text id={skill.title} variant="heading-strong-l">
+                        {skill.title}
+                      </Text>
+                    </div>
+
+                    {skill.description && (
+                      <Text
+                        variant="body-default-m"
+                        onBackground="neutral-weak"
+                        className="skill-description"
+                      >
+                        {skill.description}
+                      </Text>
+                    )}
+
                     {skill.tags && skill.tags.length > 0 && (
-                      <Row wrap gap="16" paddingTop="m">
+                      <div className="skills-tags">
                         {skill.tags.map((tag, tagIndex) => (
-                          <Tag key={`${skill.title}-${tagIndex}`} size="l" prefixIcon={tag.icon} style={{ transform: "scale(1.2)", margin: "4px"}}>
-                            {tag.name}
-                          </Tag>
-                        ))}
-                      </Row>
-                    )}
-                    {skill.images && skill.images.length > 0 && (
-                      <Row fillWidth paddingTop="m" gap="12" wrap>
-                        {skill.images.map((image, index) => (
-                          <Row
-                            key={index}
-                            border="neutral-medium"
-                            radius="m"
-                            minWidth={image.width}
-                            height={image.height}
+                          <div
+                            key={`${skill.title}-${tagIndex}`}
+                            className="skill-tag"
                           >
-                            <Media
-                              enlarge
-                              radius="m"
-                              sizes={image.width.toString()}
-                              alt={image.alt}
-                              src={image.src}
-                            />
-                          </Row>
+                            {tag.icon && (
+                              <span className="skill-tag-icon">
+                                {tag.icon}
+                              </span>
+                            )}
+
+                            <span>{tag.name}</span>
+                          </div>
                         ))}
-                      </Row>
+                      </div>
                     )}
-                  </Column>
+                  </article>
                 ))}
-              </Column>
-            </>
+              </div>
+            </section>
           )}
         </Column>
-      </Row>
+      </Column>
     </Column>
   );
 }
