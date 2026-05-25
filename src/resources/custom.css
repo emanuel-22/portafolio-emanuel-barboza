@@ -87,9 +87,11 @@ body {
     var(--page-background);
 }
 
-img[src="/images/emapro.png"] {
+img[src="/images/foto_mia.png"] {
   border: 3px solid rgba(80, 130, 255, 0.35);
-  box-shadow: 0 0 40px rgba(60, 130, 246, 0.25);
+  box-shadow: 0 0 30px rgba(60, 130, 246, 0.25);
+  object-fit: cover;
+  object-position: center 18%;
 }
 
 h1, h2 {
@@ -380,8 +382,8 @@ h1 + div {
 }
 
 .profile-hero img {
-  width: 150px !important;
-  height: 150px !important;
+  width: 160px !important;
+  height: 160px !important;
 }
 
 @media (max-width: 768px) {
