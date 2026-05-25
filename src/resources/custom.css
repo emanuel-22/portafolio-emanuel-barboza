@@ -87,7 +87,7 @@ body {
     var(--page-background);
 }
 
-img[src="/images/perfil.png"] {
+img[src="/images/emapro.png"] {
   border: 3px solid rgba(80, 130, 255, 0.35);
   box-shadow: 0 0 40px rgba(60, 130, 246, 0.25);
 }

@@ -6,7 +6,7 @@ const person: Person = {
   lastName: "Barboza",
   name: `Emanuel Barboza`,
   role: "Project Manager | Scrum Master",
-  avatar: "/images/perfil.png",
+  avatar: "/images/emapro.png",
   email: "emanuelbarboza5@gmail.com"
 };
 
